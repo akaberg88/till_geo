@@ -10,6 +10,7 @@ Sediment codes:
     till, weathered bedrock till = 0
     sand, gravel, silt, clay = 1
     weathered bedrock = 2
+    unknown = 3
 """
 import glob
 import numpy as np
