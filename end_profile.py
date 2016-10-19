@@ -3,18 +3,18 @@
 Created on Mon Oct  3 08:27:46 2016
 
 @author: Annika Åberg
-perustuu kohdennetun moreenilinjageokemian aineiston muokaukseen
-niin, että koodi ottaa aina alimman profiilin kuuluvan
-näytteen perustuen X-koordinaatteihin.
+Koodi etsii kohdennetun moreenilinjageokemian aineiston 
+(GTK) alimman profiiliin kuuluvan näytteen perustuen X ja 
+Y -koordinaatteihin.
 """
 
 import glob
 
-#Tämä on esimerkistä Copying selected lines of (multiple) files into a new location
+#Työskentelykansion määritys
 source_dir = "/home/geo/data/kersilo"
 till_paths = glob.glob(source_dir + "/outside_all.csv")
 
-#Tämä on esimerkistä Interacting with our file data
+#Tulostiedoston määritys
 with open("outside_all.csv", "r") as infile:
     data = infile.read()
     datalist = data.splitlines()
@@ -47,7 +47,7 @@ for i in range(0,len(datalist)):
 joo = 'Yes'
 ei = 'No'
 
-#Tässä kirjoitetaan profiilin päättyminen tulos fileen.
+#Tässä kirjoitetaan profiilin päättyminen tulos tiedostoon.
 with open('end_profile.csv', 'w') as out_file:
     for a in range(1,len(Sedi)-1):        
             if X[a] != X[a+1] or Y[a] != Y[a+1]:
