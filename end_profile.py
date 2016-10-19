@@ -46,15 +46,14 @@ for i in range(0,len(datalist)):
     
 joo = 'Yes'
 ei = 'No'
-multi = ""
 
-#print(multi)   
-            
-#kokeile for loopin edelle def-funktiota tai määitä jokin muuttuja
-with open('till_all2.txt', 'w') as out_file:
+#Tässä kirjoitetaan profiilin päättyminen tulos fileen.
+with open('end_profile.csv', 'w') as out_file:
     for a in range(1,len(Sedi)-1):        
             if X[a] != X[a+1] or Y[a] != Y[a+1]:
-                out_file.write(joo+'\n')
-            elif X[a] == X[a+1] or Y[a] != Y[a+1]:    
-                out_file.write(ei+'\n') 
-    out_file.close        
+                yes_line = str(ID[a])+','+str(Sedi[a])+','+str(Depth[a])+','+str(X[a])+','+str(Y[a])+','+joo+'\n'                                
+                out_file.write(yes_line)
+            elif X[a] == X[a+1] or Y[a] != Y[a+1]:  
+                no_line = str(ID[a])+','+str(Sedi[a])+','+str(Depth[a])+','+ str(X[a])+','+str(Y[a])+','+ei+'\n'              
+                out_file.write(no_line) 
+                out_file.close        
