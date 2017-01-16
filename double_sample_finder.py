@@ -17,11 +17,11 @@ source_dir = "C:\HY-Data\AKABERG\documents\Python"
 file_paths = glob.glob("C:\HY-Data\AKABERG\documents\Python\outside_all.csv")
 
 #Defining output file
-profile_out = "C:\HY-Data\AKABERG\documents\Python\Actually_no_profile3.csv"
+profile_out = "C:\HY-Data\AKABERG\documents\Python\Actually_no_profile4.csv"
 
 datas=np.loadtxt(fname ='outside_all.csv',dtype = {'names': ('SAMPLE_ID', 'SOILTYPE','DEPTH_m', 'X_EUREF','Y_EUREF'),
-                                                    'formats': ('S20','S20', 'f6','f12','f12')},
-                                                    delimiter=',',skiprows=1, usecols=(1,2,3,4,5))
+                                                    'formats': ('S20','S20','S6','S12','S12')},
+                                                    delimiter=',',skiprows=1, usecols=(1,2,3,4,5)) #spyder rejects float e.g. 'f6'
 
 ids = []
 sedim = []
